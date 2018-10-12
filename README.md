@@ -24,7 +24,7 @@ This library is used for transmit the data through the network channel securely 
         [Route("Token")]
         public IHttpActionResult Token()
         {
-            token_gen.initialize("central","ekyc");
+            token_gen.initialize();
             token_gen.expiry_minutes = 30;
             token_gen.addClaim("admin");
             token_gen.PRIMARY_MACHINE_KEY = "10101010101010101010101010101010";
