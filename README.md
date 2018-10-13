@@ -47,8 +47,6 @@ This library is used for transmit the data through the network channel securely 
         [Route("Encrypt_Check")]
         public IHttpActionResult Encrypt_Check(dynamic data)
         {
-
-            token_gen.AuthorizeClaim("admin");
             string value = token_gen.Authorize(data);
             return Ok(value);
         }
@@ -58,8 +56,9 @@ This library is used for transmit the data through the network channel securely 
         public IHttpActionResult Encrypt_Check_get(string data)
         {
 
-            token_gen.AuthorizeClaim("admin");
-            string value = token_gen.Authorize(data);
+            List<string> obj = new List<string>();
+            obj.Add("admin");
+            string value = token_gen.Authorize(data,obj);
 
             return Ok(value);
         }
