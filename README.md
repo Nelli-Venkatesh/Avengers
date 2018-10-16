@@ -37,7 +37,8 @@ This library is used for transmit the data through the network channel securely 
 
 ###### For Token Verifications
 ```
-  token_gen.AuthorizeClaim("admin"); // Only the added user can access this api. 
+  List<string> obj = new List<string>();
+            obj.Add("admin");// Only the added user can access this api. 
   string value = token_gen.Authorize(data); // returns the decrypted data
 ```
 ###### Example 
